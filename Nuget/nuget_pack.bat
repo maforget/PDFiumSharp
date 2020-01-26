@@ -1,3 +1,4 @@
+nuget pack PDFium.Linux.nuspec
 nuget pack PDFium.Windows.nuspec
 nuget pack PDFiumSharp.nuspec
 nuget pack PDFiumSharp.GdiPlus.nuspec

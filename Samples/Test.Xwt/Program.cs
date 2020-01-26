@@ -9,7 +9,7 @@ namespace Test.Xwt
 	class Program
 	{
 		[STAThread]
-		static void Main(string[] args)
+		static void Main()
 		{
 			Application.Initialize();
 			Window window = new Window();
