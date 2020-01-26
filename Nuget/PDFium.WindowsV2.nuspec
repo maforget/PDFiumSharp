@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>PDFium.WindowsV2</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Foxit, Google</authors>
     <owners>ArgusMagnus</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>https://pdfium.googlesource.com/pdfium/+/master/LICENSE</licenseUrl>
+    <licenseUrl>https://pdfium.googlesource.com/pdfium/+/master/licenseUrl</licenseUrl>
     <projectUrl>https://pdfium.googlesource.com/pdfium/</projectUrl>
     <description>PDFium library binaries for windows (pdfium_x64.dll, pdfium_x86.dll).</description>
     <releaseNotes></releaseNotes>
@@ -16,6 +16,6 @@
   <files>
     <file src="pdfium_x64.dll" target="build" />
     <file src="pdfium_x86.dll" target="build" />
-    <file src="PDFium.Windows.targets" target="build" />
+    <file src="PDFium.WindowsV2.props" target="build" />
   </files>
 </package>

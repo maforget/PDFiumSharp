@@ -6,7 +6,7 @@
     <authors>ArgusMagnus</authors>
     <owners>Zubastic</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <licenseUrl>https://github.com/Zubastic/PDFiumSharp/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/Zubastic/PDFiumSharp/blob/master/licenseUrl</licenseUrl>
     <projectUrl>https://github.com/Zubastic/PDFiumSharp</projectUrl>
     <description> C#/.NET Wrapper for the PDFium library. Add also a package for the native binaries (currently only PDFium.Windows is provided) or provide them (pdfium_x64.dll, pdfium_x86.dll) yourself.</description>
     <releaseNotes>Upgraded to NetStandart 2.0. Updated methods and libs.</releaseNotes>
