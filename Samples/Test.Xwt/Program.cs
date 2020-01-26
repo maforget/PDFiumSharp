@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xwt;
 using Xwt.Drawing;
 using PDFiumSharp;
-using System.IO;
 
 namespace Test.Xwt
 {
