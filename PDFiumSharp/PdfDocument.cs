@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using PDFiumSharp.Types;
 using System.IO;
+using PDFiumSharp.Enums;
 
 namespace PDFiumSharp
 {

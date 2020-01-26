@@ -5,9 +5,9 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-    public enum PathFillModes : int
+    public enum PathFillModes
     {
 		NoFill = 0,
 		Alternate = 1,

@@ -7,11 +7,11 @@ License: Microsoft Reciprocal License (MS-RL)
 #endregion
 using System;
 
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
 	[Flags]
-	public enum RenderingFlags : int
-	{
+	public enum RenderingFlags
+    {
 		None = 0,
 
 		/// <summary>

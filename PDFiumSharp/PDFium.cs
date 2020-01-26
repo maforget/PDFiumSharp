@@ -13,6 +13,7 @@ using System.Linq;
 using System.Globalization;
 using System.Text;
 using System.Collections.Generic;
+using PDFiumSharp.Enums;
 
 namespace PDFiumSharp
 {
@@ -36,7 +37,7 @@ namespace PDFiumSharp
 
 		static bool Initialize()
 		{
-			try { PDFium.FPDF_InitLibrary(); }
+			try { FPDF_InitLibrary(); }
 			catch { return false; }
 			return true;
 		}

@@ -14,7 +14,7 @@ namespace PDFiumSharp
 		public PdfDocument Document { get; }
 		public string Name { get; }
 
-		public int PageIndex => PDFium.FPDFDest_GetPageIndex(Document.Handle, Handle);
+		public int PageIndex => PDFium.FPDFDest_GetDestPageIndex(Document.Handle, Handle);
 
 		public (float X, float Y, float Zoom) LocationInPage
 		{

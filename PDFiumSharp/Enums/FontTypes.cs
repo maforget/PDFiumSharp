@@ -5,13 +5,11 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-	public enum SaveFlags : int
-	{
-		None = 0,
-		Incremental = 1,
-		NotIncremental = 2,
-		RemoveSecurity = 3
+	public enum FontTypes
+    {
+		Type1 = 1,
+		TrueType = 2
 	}
 }

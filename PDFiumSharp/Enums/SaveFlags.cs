@@ -5,17 +5,13 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-    public enum MetadataTags
+	public enum SaveFlags
     {
-		Title,
-		Author,
-		Subject,
-		Keywords,
-		Creator,
-		Producer,
-		CreationDate,
-		ModDate
+		None = 0,
+		Incremental = 1,
+		NotIncremental = 2,
+		RemoveSecurity = 3
 	}
 }

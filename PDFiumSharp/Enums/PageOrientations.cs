@@ -5,13 +5,13 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-    public enum DuplexTypes : int
+    public enum PageOrientations
     {
-		DuplexUndefined = 0,
-		Simplex,
-		DuplexFlipShortEdge,
-		DuplexFlipLongEdge
-	}
+		Normal = 0,
+		Rotated90CW = 1,
+		Rotated180 = 2,
+		Rotated90CCW = 3,
+    }
 }

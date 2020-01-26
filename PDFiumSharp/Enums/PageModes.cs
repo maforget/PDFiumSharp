@@ -5,10 +5,10 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-	public enum PageModes : int
-	{
+	public enum PageModes
+    {
 		/// <summary>
 		/// Unknown page mode.
 		/// </summary>

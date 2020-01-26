@@ -5,13 +5,16 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-    public enum PageOrientations : int
-    {
-		Normal = 0,
-		Rotated90CW = 1,
-		Rotated180 = 2,
-		Rotated90CCW = 3,
-    }
+	public enum RenderingStatus : int
+	{
+		Reader = 0,
+
+		ToBeContinued = 1,
+
+		Done = 2,
+
+		Failed = 3
+	}
 }

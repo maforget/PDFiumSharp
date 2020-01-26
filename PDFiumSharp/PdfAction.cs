@@ -6,6 +6,7 @@ License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
 using System;
+using PDFiumSharp.Enums;
 using PDFiumSharp.Types;
 
 namespace PDFiumSharp

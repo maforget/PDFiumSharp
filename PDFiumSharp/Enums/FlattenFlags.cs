@@ -5,10 +5,10 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-	public enum FlattenFlags : int
-	{
+	public enum FlattenFlags
+    {
 		/// <summary>
 		/// Flatten for normal display.
 		/// </summary>
@@ -20,8 +20,8 @@ namespace PDFiumSharp
 		Print = 1
 	}
 
-	public enum FlattenResults : int
-	{
+	public enum FlattenResults
+    {
 		/// <summary>
 		/// Flatten operation failed.
 		/// </summary>

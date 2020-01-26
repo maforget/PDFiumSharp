@@ -5,11 +5,17 @@ Copyright (C) 2017 Tobias Meyer
 License: Microsoft Reciprocal License (MS-RL)
 */
 #endregion
-namespace PDFiumSharp
+namespace PDFiumSharp.Enums
 {
-	public enum FontTypes : int
-	{
-		Type1 = 1,
-		TrueType = 2
+    public enum MetadataTags
+    {
+		Title,
+		Author,
+		Subject,
+		Keywords,
+		Creator,
+		Producer,
+		CreationDate,
+		ModDate
 	}
 }

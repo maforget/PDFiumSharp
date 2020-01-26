@@ -2,6 +2,7 @@
 using Xwt;
 using Xwt.Drawing;
 using PDFiumSharp;
+using PDFiumSharp.Enums;
 
 namespace Test.Xwt
 {

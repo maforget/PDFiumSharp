@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using PDFiumSharp.Enums;
 
 namespace PDFiumSharp
 {
@@ -61,13 +62,13 @@ namespace PDFiumSharp
 		static BitmapFormats GetBitmapFormat(PixelFormat pixelFormat)
 		{
 			if (pixelFormat == PixelFormats.Bgra32)
-				return BitmapFormats.FPDFBitmap_BGRA;
+				return BitmapFormats.BGRA;
 			if (pixelFormat == PixelFormats.Bgr32)
-				return BitmapFormats.FPDFBitmap_BGRx;
+				return BitmapFormats.BGRx;
 			if (pixelFormat == PixelFormats.Bgr24)
-				return BitmapFormats.FPDFBitmap_BGR;
+				return BitmapFormats.BGR;
 			if (pixelFormat == PixelFormats.Gray8)
-				return BitmapFormats.FPDFBitmap_Gray;
+				return BitmapFormats.Gray;
 			throw new NotSupportedException($"Pixel format {pixelFormat} is not supported.");
 		}
 	}
