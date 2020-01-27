@@ -6,9 +6,9 @@
     <authors>Foxit, Google</authors>
     <owners>Zubastic</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>https://pdfium.googlesource.com/pdfium/+/master/licenseUrl</licenseUrl>
-    <projectUrl>https://pdfium.googlesource.com/pdfium/</projectUrl>
-    <description>PDFium library binaries for linux (pdfium_x64.so, pdfium_x86.so, libpdfium.so).</description>
+    <licenseUrl>https://github.com/chromium/pdfium/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/chromium/pdfium/</projectUrl>
+    <description>PDFium library binaries for linux (pdfium_x64.so, pdfium_x86.so, libpdfium.so). Libs from repo: https://github.com/bblanchon/pdfium-binaries </description>
     <releaseNotes></releaseNotes>
     <copyright></copyright>
     <tags>PDF PDFium Renderer Rendering</tags>

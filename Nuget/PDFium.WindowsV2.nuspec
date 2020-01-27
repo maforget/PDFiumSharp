@@ -6,9 +6,9 @@
     <authors>Foxit, Google</authors>
     <owners>ArgusMagnus</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>https://pdfium.googlesource.com/pdfium/+/master/licenseUrl</licenseUrl>
-    <projectUrl>https://pdfium.googlesource.com/pdfium/</projectUrl>
-    <description>PDFium library binaries for windows (pdfium_x64.dll, pdfium_x86.dll).</description>
+    <licenseUrl>https://github.com/chromium/pdfium/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/chromium/pdfium/</projectUrl>
+    <description>PDFium library binaries for windows (pdfium_x64.dll, pdfium_x86.dll). Libs from repo: https://github.com/bblanchon/pdfium-binaries </description>
     <releaseNotes></releaseNotes>
     <copyright></copyright>
     <tags>PDF PDFium Renderer Rendering</tags>
