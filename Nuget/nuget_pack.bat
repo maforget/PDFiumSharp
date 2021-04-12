@@ -1,3 +1,4 @@
+@echo off
 nuget pack PDFium.LinuxV2.nuspec
 nuget pack PDFium.WindowsV2.nuspec
 nuget pack PDFiumSharpV2.nuspec

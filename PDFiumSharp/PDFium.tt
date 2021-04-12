@@ -36,7 +36,7 @@ var Imports = new[] {
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 
-	new { Method = "void FPDF_SetPrintTextWithGDI(bool use_gdi)",
+    new { Method = "void FPDF_SetPrintTextWithGDI(bool use_gdi)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
@@ -52,6 +52,11 @@ var Imports = new[] {
 		  Attributes = new string[] { } },
 
 	new { Method = "FPDF_DOCUMENT FPDF_LoadMemDocument(ref byte data_buf, int size, [MarshalAs(UnmanagedType.LPStr)] string password)",
+		  AccessModifier = "private",
+		  Documentation = new[] { "<seealso cref='PdfDocument.PdfDocument(byte[], int, int, string)'/>" },
+		  Attributes = new string[] { } },
+
+	new { Method = "FPDF_DOCUMENT FPDF_LoadMemDocument64(ref byte data_buf, long size, [MarshalAs(UnmanagedType.LPStr)] string password)",
 		  AccessModifier = "private",
 		  Documentation = new[] { "<seealso cref='PdfDocument.PdfDocument(byte[], int, int, string)'/>" },
 		  Attributes = new string[] { } },
@@ -72,6 +77,11 @@ var Imports = new[] {
 		  Attributes = new string[] { } },
 
 	new { Method = "bool FPDF_DocumentHasValidCrossReferenceTable(FPDF_DOCUMENT document)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "uint FPDF_GetTrailerEnds(FPDF_DOCUMENT document, ref byte buffer, uint length)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
@@ -256,14 +266,49 @@ var Imports = new[] {
 		  Documentation = new string[] { "<seealso cref='PdfDestinationCollection[string]'/>", "<seealso cref='PdfDocument.Destinations'/>" },
 		  Attributes = new string[] { } },
 
-	new { Method = "FPDF_DEST FPDF_GetNamedDest(FPDF_DOCUMENT document, int index, IntPtr buffer, out int buflen)",
+    new { Method = "FPDF_DEST FPDF_GetNamedDest(FPDF_DOCUMENT document, int index, IntPtr buffer, out int buflen)",
 		  AccessModifier = "private",
 		  Documentation = new string[] { "<seealso cref='PDFium.FPDF_GetNamedDest(FPDF_DOCUMENT, int)'/>" },
 		  Attributes = new string[] { } },
+    
+    new { Method = "FPDF_DEST FPDF_GetNamedDest(FPDF_DOCUMENT document, int index, ref byte buffer, ref int buflen)",
+        AccessModifier = "private",
+        Documentation = new string[] { "<seealso cref='PDFium.FPDF_GetNamedDest(FPDF_DOCUMENT, int)'/>" },
+        Attributes = new string[] { } },
 
-	new { Method = "FPDF_DEST FPDF_GetNamedDest(FPDF_DOCUMENT document, int index, ref byte buffer, ref int buflen)",
-		  AccessModifier = "private",
-		  Documentation = new string[] { "<seealso cref='PDFium.FPDF_GetNamedDest(FPDF_DOCUMENT, int)'/>" },
+	new { Method = "int FPDF_GetXFAPacketCount(FPDF_DOCUMENT document)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "uint FPDF_GetXFAPacketName(FPDF_DOCUMENT document, int index, ref byte buffer, long buflen)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "bool FPDF_GetXFAPacketContent(FPDF_DOCUMENT document, int index, ref byte buffer, long buflen, ref long out_buflen)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "IntPtr FPDF_GetArrayBufferAllocatorSharedInstance()",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "FPDF_RESULT FPDF_BStr_Init(ref FPDF_BSTR bstr)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "FPDF_RESULT FPDF_BStr_Set(ref FPDF_BSTR bstr, ref char cstr, int length)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "FPDF_RESULT FPDF_BStr_Clear(ref FPDF_BSTR bstr)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 
 	// https://pdfium.googlesource.com/pdfium/+/master/public/fpdf_doc.h
@@ -357,6 +402,11 @@ var Imports = new[] {
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 
+	new { Method = "FPDF_ANNOTATION FPDFLink_GetAnnot(FPDF_PAGE page, FPDF_LINK linkAnnot)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
 	new { Method = "bool FPDFLink_GetAnnotRect(FPDF_LINK linkAnnot, out FS_RECTF rect)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
@@ -372,12 +422,22 @@ var Imports = new[] {
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 
+	new { Method = "FPDF_ACTION FPDF_GetPageAAction(FPDF_PAGE page, int aa_type)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "uint FPDF_GetFileIdentifier(FPDF_DOCUMENT document, FPDF_FILEIDTYPE id_type, ref byte buffer, long buflen)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
 	new { Method = "uint FPDF_GetMetaText(FPDF_DOCUMENT document, [MarshalAs(UnmanagedType.LPStr)] string tag, ref byte buffer, uint buflen)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { "<seealso cref='PDFium.FPDF_GetMetaText(FPDF_DOCUMENT, string)'/>", "<seealso cref='PDFium.FPDF_GetMetaText(FPDF_DOCUMENT, MetadataTags)'/>" },
 		  Attributes = new string[] { } },
 
-		  // Entry point not found
+    // Entry point not found
 	new { Method = "uint FPDF_GetPageLabel(FPDF_DOCUMENT document, int page_index, ref byte buffer, uint buflen)",
 		  AccessModifier = "private",
 		  Documentation = new string[] { "<seealso cref='PDFium.FPDF_GetPageLabel(FPDF_DOCUMENT, int)'/>" },
@@ -409,7 +469,7 @@ var Imports = new[] {
 		  Documentation = new string[] { "<seealso cref='PdfPage.Orientation'/>" },
 		  Attributes = new string[] { } },
 
-		  // The |page_obj| will be automatically freed.
+    // The |page_obj| will be automatically freed.
 	new { Method = "void FPDFPage_InsertObject(FPDF_PAGE page, FPDF_PAGEOBJECT page_obj)",
 		  AccessModifier = "private",
 		  Documentation = new string[] { },
@@ -571,6 +631,11 @@ var Imports = new[] {
 		  Attributes = new string[] { } },
 
 	new { Method = "FPDF_BITMAP FPDFImageObj_GetBitmap(FPDF_PAGEOBJECT image_object)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "FPDF_BITMAP FPDFImageObj_GetRenderedBitmap(FPDF_DOCUMENT document, FPDF_PAGE page, FPDF_PAGEOBJECT image_object)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
@@ -839,6 +904,11 @@ var Imports = new[] {
 		  Attributes = new string[] { } },
 
 	// https://pdfium.googlesource.com/pdfium/+/master/public/fpdf_progressive.h
+	new { Method = "RenderingStatus FPDF_RenderPageBitmapWithColorScheme_Start(FPDF_BITMAP bitmap, FPDF_PAGE page, int start_x, int start_y, int size_x, int size_y, PageOrientations rotate, RenderingFlags flags, ref FPDF_COLORSCHEME color_scheme, IFSDK_PAUSE pause)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
 	new { Method = "RenderingStatus FPDF_RenderPageBitmap_Start(FPDF_BITMAP bitmap, FPDF_PAGE page, int start_x, int start_y, int size_x, int size_y, PageOrientations rotate, RenderingFlags flags, IFSDK_PAUSE pause)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
@@ -899,6 +969,21 @@ var Imports = new[] {
 
 	new { Method = "uint FPDF_StructElement_GetAltText(FPDF_STRUCTELEMENT struct_element, ref byte buffer, uint buflen)",
 		  AccessModifier = "private",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "uint FPDF_StructElement_GetID(FPDF_STRUCTELEMENT struct_element, ref byte buffer, long buflen)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "uint FPDF_StructElement_GetLang(FPDF_STRUCTELEMENT struct_element, ref byte buffer, long buflen)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "uint FPDF_StructElement_GetStringAttribute(FPDF_STRUCTELEMENT struct_element, [MarshalAs(UnmanagedType.LPStr)] string attr_name, ref byte buffer, long buflen)",
+		  AccessModifier = "public",
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 

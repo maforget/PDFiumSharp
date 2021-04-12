@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>PDFiumSharp.XwtV2</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>ArgusMagnus</authors>
     <owners>Zubastic</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Zubastic/PDFiumSharp</projectUrl>
     <description>Mono XWT extensions for PDFiumSharp.</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <copyright>Copyright 2021</copyright>
     <tags>C# PDF PDFium Renderer Rendering</tags>
     <dependencies>
       <dependency id="System.ValueTuple" version="4.5.0" exclude="Build,Analyzers" />
