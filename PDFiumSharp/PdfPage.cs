@@ -89,7 +89,21 @@ namespace PDFiumSharp
 			if (renderTarget == null)
 				throw new ArgumentNullException(nameof(renderTarget));
 
+			// If we have a valid form and we were asked to render annotations
+			// we first render bitmap without annotations and render them after via a form
+			var form = this.Document.Form;
+			var renderAnnotations = !form.IsNull && flags.HasFlag(RenderingFlags.Annotations);
+			if (renderAnnotations)
+			{
+				flags &= ~RenderingFlags.Annotations;
+			}
+
 			PDFium.FPDF_RenderPageBitmap(renderTarget.Handle, this.Handle, rectDest.left, rectDest.top, rectDest.width, rectDest.height, orientation, flags);
+
+			if (renderAnnotations)
+			{
+				PDFium.FPDF_FFLDraw(form, renderTarget.Handle, this.Handle, rectDest.left, rectDest.top, rectDest.width, rectDest.height, orientation, flags);
+			}
 		}
 
 		/// <summary>
