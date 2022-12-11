@@ -15,6 +15,12 @@ namespace PDFiumSharp
 {
     public sealed class PdfDocument : NativeWrapper<FPDF_DOCUMENT>
     {
+	    private FPDF_FORMFILLINFO _formCallbacks;
+
+	    private FPDF_FORMHANDLE _form;
+
+	    internal FPDF_FORMHANDLE Form => this._form;
+	    
 		/// <summary>
 		/// Gets the pages in the current <see cref="PdfDocument"/>.
 		/// </summary>
@@ -61,6 +67,24 @@ namespace PDFiumSharp
 		{
 			if (doc.IsNull)
 				throw new PDFiumException();
+
+			// The version depends on whether PDFium was compiled with XFA (2) or without (1).
+			// Try in sequential order.
+			for (var version = 1; version <= 2; version++)
+			{
+				_formCallbacks = new FPDF_FORMFILLINFO(version);
+				_form = PDFium.FPDFDOC_InitFormFillEnvironment(doc, _formCallbacks);
+				if (!_form.IsNull)
+				{
+					// copied from https://pdfium.googlesource.com/pdfium/+/refs/heads/main/samples/pdfium_test.cc#1272
+					PDFium.FPDF_SetFormFieldHighlightColor(_form, 0, 0xFFE4DD);
+					PDFium.FPDF_SetFormFieldHighlightAlpha(_form, 100);
+					PDFium.FORM_DoDocumentJSAction(_form);
+					PDFium.FORM_DoDocumentOpenAction(_form);
+					break;
+				}
+			}
+
 			Pages = new PdfPageCollection(this);
 			Destinations = new PdfDestinationCollection(this);
 		}
@@ -146,6 +170,12 @@ namespace PDFiumSharp
 
 		protected override void Dispose(FPDF_DOCUMENT handle)
 		{
+			if (!_form.IsNull)
+			{
+				PDFium.FPDFDOC_ExitFormFillEnvironment(_form);
+				_form = FPDF_FORMHANDLE.Null;
+				_formCallbacks = null;
+			}
 			((IDisposable)Pages).Dispose();
 			PDFium.FPDF_CloseDocument(handle);
 		}
