@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using PDFiumSharp.Types;
 using System.IO;
+using System.Runtime.InteropServices;
 using PDFiumSharp.Enums;
 
 namespace PDFiumSharp
@@ -16,6 +17,8 @@ namespace PDFiumSharp
     public sealed class PdfDocument : NativeWrapper<FPDF_DOCUMENT>
     {
 	    private FPDF_FORMFILLINFO _formCallbacks;
+
+	    private GCHandle _formCallbacksHandle;
 
 	    private FPDF_FORMHANDLE _form;
 
@@ -73,6 +76,8 @@ namespace PDFiumSharp
 			for (var version = 1; version <= 2; version++)
 			{
 				_formCallbacks = new FPDF_FORMFILLINFO(version);
+				// We have to pin the callbacks because the form references them (so they shouldn't ever be moved)
+				_formCallbacksHandle = GCHandle.Alloc(_formCallbacks, GCHandleType.Pinned);
 				_form = PDFium.FPDFDOC_InitFormFillEnvironment(doc, _formCallbacks);
 				if (!_form.IsNull)
 				{
@@ -83,6 +88,8 @@ namespace PDFiumSharp
 					PDFium.FORM_DoDocumentOpenAction(_form);
 					break;
 				}
+				// that's not a correct version - unpin the handle
+				_formCallbacksHandle.Free();
 			}
 
 			Pages = new PdfPageCollection(this);
@@ -172,9 +179,15 @@ namespace PDFiumSharp
 		{
 			if (!_form.IsNull)
 			{
+				PDFium.FORM_DoDocumentAAction(_form, FPDFDOC_AACTION.WC);
 				PDFium.FPDFDOC_ExitFormFillEnvironment(_form);
 				_form = FPDF_FORMHANDLE.Null;
 				_formCallbacks = null;
+
+				if (_formCallbacksHandle.IsAllocated)
+				{
+					_formCallbacksHandle.Free();
+				}
 			}
 			((IDisposable)Pages).Dispose();
 			PDFium.FPDF_CloseDocument(handle);

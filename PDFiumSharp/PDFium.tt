@@ -1273,38 +1273,43 @@ var Imports = new[] {
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
-	
+
 	new { Method = "FPDF_FORMHANDLE FPDFDOC_InitFormFillEnvironment(FPDF_DOCUMENT document, FPDF_FORMFILLINFO formInfo)",
 		AccessModifier = "public",
 		Documentation = new string[] { },
 		Attributes = new string[] { } },
-	
+
 	new { Method = "void FPDFDOC_ExitFormFillEnvironment(FPDF_FORMHANDLE hHandle)",
 		AccessModifier = "public",
 		Documentation = new string[] { },
 		Attributes = new string[] { } },
-	
+
 	new { Method = "void FPDF_SetFormFieldHighlightColor(FPDF_FORMHANDLE hHandle, int fieldType, uint color)",
 		AccessModifier = "public",
 		Documentation = new string[] { },
 		Attributes = new string[] { } },
-	
+
 	new { Method = "void FPDF_SetFormFieldHighlightAlpha(FPDF_FORMHANDLE hHandle, byte alpha)",
 		AccessModifier = "public",
 		Documentation = new string[] { },
 		Attributes = new string[] { } },
-	
+
 	new { Method = "void FORM_DoDocumentJSAction(FPDF_FORMHANDLE hHandle)",
 		AccessModifier = "public",
 		Documentation = new string[] { },
 		Attributes = new string[] { } },
-	
+
 	new { Method = "void FORM_DoDocumentOpenAction(FPDF_FORMHANDLE hHandle)",
 		AccessModifier = "public",
 		Documentation = new string[] { },
 		Attributes = new string[] { } },
-	
+
 	new { Method = "void FPDF_FFLDraw(FPDF_FORMHANDLE hHandle, FPDF_BITMAP bitmap, FPDF_PAGE page, int start_x, int start_y, int size_x, int size_y, PageOrientations rotation, RenderingFlags flags)",
+		AccessModifier = "public",
+		Documentation = new string[] { },
+		Attributes = new string[] { } },
+
+	new { Method = "void FORM_DoDocumentAAction(FPDF_FORMHANDLE hHandle, FPDFDOC_AACTION aaType)",
 		AccessModifier = "public",
 		Documentation = new string[] { },
 		Attributes = new string[] { } }
