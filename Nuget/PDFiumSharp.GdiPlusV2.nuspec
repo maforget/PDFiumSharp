@@ -14,7 +14,7 @@
     <tags>C# PDF PDFium Renderer Rendering</tags>
     <dependencies>
       <dependency id="System.ValueTuple" version="4.5.0" exclude="Build,Analyzers" />
-      <dependency id="PDFiumSharp" version="[1,2)" />
+      <dependency id="PDFiumSharpV2" version="[1,2)" />
     </dependencies>
   </metadata>
   <files>
