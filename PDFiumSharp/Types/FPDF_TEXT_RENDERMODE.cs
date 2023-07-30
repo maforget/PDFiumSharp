@@ -1,5 +1,5 @@
 ﻿namespace PDFiumSharp.Types
-{
+{ // ReSharper disable InconsistentNaming
     /// <summary>
     /// PDF text rendering modes
     /// </summary>

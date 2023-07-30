@@ -1,17 +1,17 @@
-﻿using System;
+﻿using System.IO;
 using PDFiumSharp;
-using System.IO;
 
-namespace TestConsole
+namespace Test.Console
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			using (var doc = new PdfDocument("TestDoc.pdf", "password"))
-			{
-				int i = 0;
-				foreach (var page in doc.Pages)
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            using (var doc = new PdfDocument("TestDoc.pdf", "password"))
+            {
+                var i = 0;
+                foreach (var page in doc.Pages)
+                {
                     using (page)
                     {
                         using (var bitmap = new PDFiumBitmap((int)page.Width, (int)page.Height, true))
@@ -21,9 +21,10 @@ namespace TestConsole
                             bitmap.Save(stream);
                         }
                     }
-                
-			}
-			Console.ReadKey();
-		}
-	}
+                }
+            }
+
+            System.Console.ReadKey();
+        }
+    }
 }

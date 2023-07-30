@@ -9,7 +9,7 @@ License: Microsoft Reciprocal License (MS-RL)
 #endregion
 
 namespace PDFiumSharp.Types
-{
+{ // ReSharper disable InconsistentNaming
     public enum FPDF_RESULT
     {
         /// <summary>

@@ -11,10 +11,11 @@ License: Microsoft Reciprocal License (MS-RL)
 <#@ output extension=".g.cs" #>
 <# // ------------------------------------------------------ Code Start ------------------------------------------------------
 //This types from here: https://pdfium.googlesource.com/pdfium/+/master/public/fpdfview.h from line: // PDF types - use incomplete types (never completed) just for API type safety.
-string[] Names = {
+string[] names = {
     "FPDF_ACTION",
     "FPDF_ANNOTATION",
     "FPDF_ATTACHMENT",
+    "FPDF_AVAIL",
     "FPDF_BITMAP",
     "FPDF_BOOKMARK",
     "FPDF_BSTR",
@@ -25,6 +26,7 @@ string[] Names = {
     "FPDF_FILEIDTYPE",
     "FPDF_FONT",
     "FPDF_FORMHANDLE",
+    "FPDF_GLYPHPATH",
     "FPDF_JAVASCRIPT_ACTION",
     "FPDF_LINK",
     "FPDF_PAGE",
@@ -34,12 +36,21 @@ string[] Names = {
     "FPDF_PAGERANGE",
     "FPDF_PATHSEGMENT",
 	"FPDF_RECORDER",
+    "FPDF_OBJECT_TYPE",
     "FPDF_SCHHANDLE",
     "FPDF_SIGNATURE",
+    "FPDF_SKIA_CANVAS",
     "FPDF_STRUCTELEMENT",
+    "FPDF_STRUCTELEMENT_ATTR",
     "FPDF_STRUCTTREE",
-	"FPDF_TEXTPAGE",
-	"FPDF_WIDGET" };
+    "FPDF_SYSFONTINFO",
+    "FPDF_TEXTPAGE",
+    "FPDF_XOBJECT",
+    "FPDF_WCHAR",
+    "FPDF_WIDGET",
+    "UNSUPPORT_INFO",
+    "FX_FILEAVAIL"
+};
 // --------------------------------------------------------- Code End ----------------------------------------------------- #>
 #region Copyright and License
 /*
@@ -58,7 +69,7 @@ using System.Threading;
 namespace PDFiumSharp.Types
 {
 <# // ------------------------------------------------------ Code Start ------------------------------------------------------
-foreach (string name in Names)
+foreach (var name in names)
 {
 // --------------------------------------------------------- Code End ----------------------------------------------------- #>
 	/// <summary>Handle to a <#=name#></summary>

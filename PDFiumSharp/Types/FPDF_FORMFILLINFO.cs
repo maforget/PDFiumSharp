@@ -2,15 +2,12 @@
 using System.Runtime.InteropServices;
 
 namespace PDFiumSharp.Types
-{
+{ // ReSharper disable once InconsistentNaming
     [StructLayout(LayoutKind.Sequential)]
     public class FPDF_FORMFILLINFO
     {
-        public FPDF_FORMFILLINFO(int version)
-        {
-            this.version = version;
-        }
-        
+        public FPDF_FORMFILLINFO(int version) => this.version = version;
+
         private readonly int version;
 
         public int Version => this.version;

@@ -9,7 +9,7 @@ using System;
 using System.Runtime.InteropServices;
 
 namespace PDFiumSharp.Types
-{
+{ // ReSharper disable InconsistentNaming
 	[StructLayout(LayoutKind.Sequential)]
     public struct FPDF_LIBRARY_CONFIG
     {

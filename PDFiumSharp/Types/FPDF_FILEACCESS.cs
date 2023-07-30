@@ -67,4 +67,12 @@ namespace PDFiumSharp.Types
 			_writeBlock = writeBlock;
 		}
 	}
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct FPDF_FILEACCESS
+    {
+        readonly ulong m_FileLen;
+        readonly IntPtr m_GetBlock;
+        readonly IntPtr m_Param;
+    }
 }
