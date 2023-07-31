@@ -53,10 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="PDFium.Windows">
+    <PackageReference Include="PDFium.WindowsV2">
       <Version>1.1.1</Version>
     </PackageReference>
-    <PackageReference Include="PDFiumSharp">
+    <PackageReference Include="PDFiumSharpV2">
       <Version>1.1.1</Version>
     </PackageReference>
   </ItemGroup>
