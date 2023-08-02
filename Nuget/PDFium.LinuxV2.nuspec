@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>PDFium.LinuxV2</id>
-    <version>1.1.2</version>
+    <version>1.1.3</version>
     <authors>Foxit, Google</authors>
     <owners>Zubastic</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
