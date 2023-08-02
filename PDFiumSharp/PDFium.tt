@@ -41,7 +41,7 @@ var Imports = new[] {
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 
-	new { Method = "FPDF_DOCUMENT FPDF_LoadDocument([MarshalAs(UnmanagedType.LPStr)] string file_path, [MarshalAs(UnmanagedType.LPStr)] string password)",
+	new { Method = "FPDF_DOCUMENT FPDF_LoadDocument([MarshalAs(UnmanagedType.LPUTF8Str)] string file_path, [MarshalAs(UnmanagedType.LPStr)] string password)",
 		  AccessModifier = "public",
 		  Documentation = new[] { "<seealso cref='PdfDocument.PdfDocument(string, string)'/>" },
 		  Attributes = new string[] { } },
@@ -2210,6 +2210,8 @@ foreach (var import in Imports)
 	foreach (var tmp in tmpArgList)
 	{
 		var argDecl = tmp.Split('=')[0].TrimEnd();
+		if (argDecl.Contains("MarshalAs(UnmanagedType.LPUTF8Str"))
+			argumentList = argumentList.Replace("MarshalAs(UnmanagedType.LPUTF8Str)", "MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(Utf8StringMarshaler))");
 		if (argDecl.Contains("ref "))
 			args += "ref ";
 		else if (argDecl.Contains("out "))

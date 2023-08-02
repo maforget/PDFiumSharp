@@ -182,7 +182,7 @@ namespace PDFiumSharp
         /// <param name="bookmark">Handle to the bookmark.</param>
         /// <returns>The title of the bookmark.</returns>
         public static string FPDFBookmark_GetTitle(FPDF_BOOKMARK bookmark)
-            => GetUtf16String((ref byte buffer, int length) => (int) FPDFBookmark_GetTitle(bookmark, ref buffer, (uint) length), sizeof(byte), true);
+            => GetUtf16String((ref byte buffer, int length) => (int)FPDFBookmark_GetTitle(bookmark, ref buffer, (uint)length), sizeof(byte), true);
 
         /// <summary>
         ///     Gets the file path of a <see cref="FPDF_ACTION" /> of type <see cref="ActionTypes.RemoteGoTo" /> or
@@ -195,7 +195,7 @@ namespace PDFiumSharp
         /// <returns>The file path of <paramref name="action" />.</returns>
         /// <seealso cref="PdfAction.FilePath" />
         public static string FPDFAction_GetFilePath(FPDF_ACTION action)
-            => GetUtf16String((ref byte buffer, int length) => (int) FPDFAction_GetFilePath(action, ref buffer, (uint) length), sizeof(byte), true);
+            => GetUtf16String((ref byte buffer, int length) => (int)FPDFAction_GetFilePath(action, ref buffer, (uint)length), sizeof(byte), true);
 
         /// <summary>
         ///     Gets URI path of a <see cref="FPDF_ACTION" /> of type <see cref="ActionTypes.Uri" />.
@@ -205,7 +205,7 @@ namespace PDFiumSharp
         /// <returns>The URI path of <paramref name="action" />.</returns>
         /// <seealso cref="PdfAction.Uri" />
         public static string FPDFAction_GetURIPath(FPDF_DOCUMENT document, FPDF_ACTION action)
-            => GetAsciiString((ref byte buffer, int length) => (int) FPDFAction_GetURIPath(document, action, ref buffer, (uint) length));
+            => GetAsciiString((ref byte buffer, int length) => (int)FPDFAction_GetURIPath(document, action, ref buffer, (uint)length));
 
         /// <summary>
         ///     Enumerates all the link annotations in <paramref name="page" />.
@@ -239,7 +239,7 @@ namespace PDFiumSharp
         /// <seealso href="http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/pdf/pdfs/PDF32000_2008.pdf">PDF Reference</seealso>
         /// <seealso cref="PdfDocument.GetMetaText(MetadataTags)" />
         public static string FPDF_GetMetaText(FPDF_DOCUMENT document, string tag) => GetUtf16String((ref byte buffer, int length)
-            => (int) FPDF_GetMetaText(document, tag, ref buffer, (uint) length), sizeof(byte), true);
+            => (int)FPDF_GetMetaText(document, tag, ref buffer, (uint)length), sizeof(byte), true);
 
         /// <summary>
         ///     Get meta-data <paramref name="tag" /> content from <paramref name="document" />.
@@ -335,7 +335,7 @@ namespace PDFiumSharp
                 count = data.Length - index;
             }
 
-            return FPDFText_LoadFont(document, ref data[index], (uint) count, font_type, cid);
+            return FPDFText_LoadFont(document, ref data[index], (uint)count, font_type, cid);
         }
 
         #endregion
@@ -399,7 +399,7 @@ namespace PDFiumSharp
         /// <param name="struct_element">Handle to the struct element.</param>
         /// <returns>The alternative text for <paramref name="struct_element" />.</returns>
         public static string FPDF_StructElement_GetAltText(FPDF_STRUCTELEMENT struct_element)
-            => GetUtf16String((ref byte buffer, int length) => (int) FPDF_StructElement_GetAltText(struct_element, ref buffer, (uint) length), sizeof(byte), true);
+            => GetUtf16String((ref byte buffer, int length) => (int)FPDF_StructElement_GetAltText(struct_element, ref buffer, (uint)length), sizeof(byte), true);
 
         #endregion
 
