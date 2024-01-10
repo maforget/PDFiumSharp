@@ -86,6 +86,11 @@ var Imports = new[] {
 		  Documentation = new[] { "<seealso cref='PdfDocument.Permissions'/>" },
 		  Attributes = new string[] { } },
 
+	new { Method = "DocumentPermissions FPDF_GetDocUserPermissions(FPDF_DOCUMENT document)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
 	new { Method = "int FPDF_GetSecurityHandlerRevision(FPDF_DOCUMENT document)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { "<seealso cref='PdfDocument.SecurityHandlerRevision'/>" },
@@ -98,7 +103,7 @@ var Imports = new[] {
 
 	new { Method = "FPDF_PAGE FPDF_LoadPage(FPDF_DOCUMENT document, int page_index)",
 		  AccessModifier = "public",
-		  Documentation = new string[] { "<seealso cref='PdfPageCollection[int]'/>", "<seealso cref='PdfDocument.Pages'/>" },
+		  Documentation = new string[] { "<seealso cref='T:PdfPageCollection[int]'/>", "<seealso cref='PdfDocument.Pages'/>" },
 		  Attributes = new string[] { } },
 
 	new { Method = "float FPDF_GetPageWidthF(FPDF_PAGE page)",
@@ -168,12 +173,12 @@ var Imports = new[] {
 
 	new { Method = "bool FPDF_DeviceToPage(FPDF_PAGE page, int start_x, int start_y, int size_x, int size_y, PageOrientations rotate, int device_x, int device_y, out double page_x, out double page_y)",
 		  AccessModifier = "public",
-		  Documentation = new string[] { "<seealso cref='PdfPage.DeviceToPage((int left, int top, int width, int height), int, int, PageOrientations)'/>" },
+		  Documentation = new string[] { "<seealso cref='T:PdfPage.DeviceToPage((int left, int top, int width, int height), int, int, PageOrientations)'/>" },
 		  Attributes = new string[] { } },
 
 	new { Method = "bool FPDF_PageToDevice(FPDF_PAGE page, int start_x, int start_y, int size_x, int size_y, PageOrientations rotate, double page_x, double page_y, out int device_x, out int device_y)",
 		  AccessModifier = "public",
-		  Documentation = new string[] { "<seealso cref='PdfPage.PageToDevice((int left, int top, int width, int height), double, double, PageOrientations)'/>" },
+		  Documentation = new string[] { "<seealso cref='T:PdfPage.PageToDevice((int left, int top, int width, int height), double, double, PageOrientations)'/>" },
 		  Attributes = new string[] { } },
 
 	new { Method = "FPDF_BITMAP FPDFBitmap_Create(int width, int height, bool hasAlpha)",
@@ -263,7 +268,7 @@ var Imports = new[] {
 
 	new { Method = "FPDF_DEST FPDF_GetNamedDestByName(FPDF_DOCUMENT document, [MarshalAs(UnmanagedType.LPStr)] string name)",
 		  AccessModifier = "public",
-		  Documentation = new string[] { "<seealso cref='PdfDestinationCollection[string]'/>", "<seealso cref='PdfDocument.Destinations'/>" },
+		  Documentation = new string[] { "<seealso cref='T:PdfDestinationCollection[string]'/>", "<seealso cref='PdfDocument.Destinations'/>" },
 		  Attributes = new string[] { } },
 
     new { Method = "FPDF_DEST FPDF_GetNamedDest(FPDF_DOCUMENT document, int index, IntPtr buffer, out int buflen)",
@@ -461,6 +466,11 @@ var Imports = new[] {
 	new { Method = "void FPDFPage_Delete(FPDF_DOCUMENT document, int page_index)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { "<seealso cref='PdfPageCollection.RemoveAt(int)'/>", "<seealso cref='PdfDocument.Pages'/>" },
+		  Attributes = new string[] { } },
+
+	new { Method = "bool FPDF_MovePages(FPDF_DOCUMENT document, ref int page_indices, ulong page_indices_len, int dest_page_index)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 
 	new { Method = "PageOrientations FPDFPage_GetRotation(FPDF_PAGE page)",
@@ -1141,6 +1151,11 @@ var Imports = new[] {
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },
 
+	new { Method = "int FPDF_StructElement_GetChildMarkedContentID(FPDF_STRUCTELEMENT struct_element, int index)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
 	new { Method = "FPDF_STRUCTELEMENT FPDF_StructElement_GetParent(FPDF_STRUCTELEMENT struct_element)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
@@ -1223,6 +1238,11 @@ var Imports = new[] {
 		  Attributes = new string[] { "[return: MarshalAs(UnmanagedType.U4)]" } },
 
 	new { Method = "int FPDFText_IsGenerated(FPDF_TEXTPAGE text_page, int index)",
+		  AccessModifier = "public",
+		  Documentation = new string[] { },
+		  Attributes = new string[] { } },
+
+	new { Method = "int FPDFText_IsHyphen(FPDF_TEXTPAGE text_page, int index)",
 		  AccessModifier = "public",
 		  Documentation = new string[] { },
 		  Attributes = new string[] { } },

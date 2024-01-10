@@ -54,10 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="PDFium.WindowsV2">
-      <Version>1.1.3</Version>
+      <Version>1.1.4</Version>
     </PackageReference>
     <PackageReference Include="PDFiumSharpV2">
-      <Version>1.1.3</Version>
+      <Version>1.1.4</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

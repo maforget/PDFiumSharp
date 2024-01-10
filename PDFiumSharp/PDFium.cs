@@ -152,7 +152,7 @@ namespace PDFiumSharp
         ///     The destination handle and name for a given index, or (<see cref="FPDF_DEST.Null" />, <c>null</c>)
         ///     if there is no named destination corresponding to <paramref name="index" />.
         /// </returns>
-        /// <seealso cref="PdfDestinationCollection[int]" />
+        /// <seealso cref="T:PdfDestinationCollection[int]" />
         /// <seealso cref="PdfDocument.Destinations" />
         public static (FPDF_DEST Destination, string Name) FPDF_GetNamedDest(FPDF_DOCUMENT document, int index)
         {
@@ -256,17 +256,17 @@ namespace PDFiumSharp
         /// <seealso cref="PdfDocument.GetMetaText(MetadataTags)" />
         public static string FPDF_GetMetaText(FPDF_DOCUMENT document, MetadataTags tag) => FPDF_GetMetaText(document, tag.ToString());
 
-        /// <summary>
+        /*/// <summary>
         /// Get the page label for <paramref name="page_index"/> from <paramref name="document"/>.
         /// </summary>
         /// <param name="document">Handle to the document.</param>
         /// <param name="page_index">The zero-based index of the page.</param>
         /// <returns>The page label.</returns>
         /// <seealso cref="PdfPage.Label"/>
-        //public static string FPDF_GetPageLabel(FPDF_DOCUMENT document, int page_index)
-        //{
-        //	return GetUtf16String((ref byte buffer, int length) => (int)FPDF_GetPageLabel(document, page_index, ref buffer, (uint)length), sizeof(byte), true);
-        //}
+        public static string FPDF_GetPageLabel(FPDF_DOCUMENT document, int page_index)
+        {
+        	return GetUtf16String((ref byte buffer, int length) => (int)FPDF_GetPageLabel(document, page_index, ref buffer, (uint)length), sizeof(byte), true);
+        }*/
 
         #endregion
 
@@ -323,6 +323,7 @@ namespace PDFiumSharp
         ///     into the document. The caller does not need to free the returned object.
         /// </summary>
         /// <param name="document">Handle to the document.</param>
+        /// <param name="font_type">Font type.</param>
         /// <param name="cid">A value specifying if the font is a CID font or not.</param>
         /// <param name="data">The data, which will be copied by the font object.</param>
         /// <param name="index">The index of the first byte to be copied from <paramref name="data" />.</param>
@@ -345,6 +346,8 @@ namespace PDFiumSharp
         /// <summary>
         ///     Imports pages from <paramref name="src_doc" /> to <paramref name="dest_doc" />
         /// </summary>
+        /// <param name="src_doc">Source document.</param>
+        /// <param name="dest_doc">Destination document.</param>
         /// <param name="index">Zero-based index of where the imported pages should be inserted in the destination document.</param>
         /// <param name="srcPageIndices">Zero-based indices of the pages to import in the source document</param>
         public static bool FPDF_ImportPages(FPDF_DOCUMENT dest_doc, FPDF_DOCUMENT src_doc, int index, params int[] srcPageIndices)
@@ -365,10 +368,13 @@ namespace PDFiumSharp
         /// <summary>
         ///     Saves a PDF document to a stream.
         /// </summary>
+        /// <param name="flags">Save flags.</param>
         /// <param name="version">
         ///     The new PDF file version of the saved file.
         ///     14 for 1.4, 15 for 1.5, etc. Values smaller than 10 are ignored.
         /// </param>
+        /// <param name="document">Pdf document.</param>
+        /// <param name="stream">Output stream.</param>
         /// <seealso cref="PDFium.FPDF_SaveAsCopy(FPDF_DOCUMENT, FPDF_FILEWRITE, SaveFlags)" />
         /// <seealso cref="PDFium.FPDF_SaveWithVersion(FPDF_DOCUMENT, FPDF_FILEWRITE, SaveFlags, int)" />
         public static bool FPDF_SaveAsCopy(FPDF_DOCUMENT document, Stream stream, SaveFlags flags, int version = 0)
