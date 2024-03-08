@@ -109,11 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Nuget\pdfium_x64.dll">
-      <Link>pdfium_x64.dll</Link>
+      <Link>Resources\pdfium_x64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="..\..\Nuget\pdfium_x86.dll">
-      <Link>pdfium_x86.dll</Link>
+      <Link>Resources\pdfium_x86.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

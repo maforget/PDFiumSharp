@@ -56,10 +56,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PDFium.g.cs</LastGenOutput>
     </None>
-    <None Update="pdfium_x64.dll">
+    <None Update="Resources\pdfium_x64.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="pdfium_x86.dll">
+    <None Update="Resources\pdfium_x86.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
