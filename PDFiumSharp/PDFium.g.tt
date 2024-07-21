@@ -8,10 +8,8 @@ License: Microsoft Reciprocal License (MS-RL)
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".g.cs" #>
+<#@ output extension=".cs" #>
 <# // ------------------------------------------------------ Code Start ------------------------------------------------------
-const string DllName32 = "Resources\\\\pdfium_x86.dll";
-const string DllName64 = "Resources\\\\pdfium_x64.dll";
 const string CallingConvention = "CallingConvention.Cdecl";
 
 var Imports = new[] {

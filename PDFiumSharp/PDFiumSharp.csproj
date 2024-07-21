@@ -18,41 +18,46 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard2.0\PDFiumSharp.xml</DocumentationFile>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DocumentationFile>bin\Release\netstandard2.0\PDFiumSharp.xml</DocumentationFile>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="PDFium.g.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>PDFium.tt</DependentUpon>
+      <DependentUpon>PDFium.g.tt</DependentUpon>
     </None>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    <PackageReference Include="T4.Build" Version="0.2.4" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Types\FPDF_Typedefs.tt">
+    <None Update="Types\FPDF_Typedefs.g.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FPDF_Typedefs.g.cs</LastGenOutput>
     </None>
-    <None Update="PDFium.tt">
+    <None Update="PDFium.g.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PDFium.g.cs</LastGenOutput>
     </None>
@@ -79,6 +84,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FPDF_Typedefs.tt</DependentUpon>
     </Compile>
+    <Compile Update="Types\FPDF_Typedefs.g.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FPDF_Typedefs.g.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
-
+    
 </Project>

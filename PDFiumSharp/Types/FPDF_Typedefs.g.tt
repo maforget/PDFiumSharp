@@ -8,7 +8,7 @@ License: Microsoft Reciprocal License (MS-RL)
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".g.cs" #>
+<#@ output extension=".cs" #>
 <# // ------------------------------------------------------ Code Start ------------------------------------------------------
 //This types from here: https://pdfium.googlesource.com/pdfium/+/master/public/fpdfview.h from line: // PDF types - use incomplete types (never completed) just for API type safety.
 string[] names = {
