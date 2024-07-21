@@ -72,23 +72,5 @@
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="PDFium.g.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>PDFium.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Types\FPDF_Typedefs.g.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FPDF_Typedefs.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Types\FPDF_Typedefs.g.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FPDF_Typedefs.g.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
     
 </Project>
